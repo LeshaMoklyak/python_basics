@@ -4,6 +4,7 @@ Finish the solution so that it returns the sum of all the multiples of 3 or 5 be
 
 Additionally, if the number is negative, return 0.'''
 
+
 def solution(number):
         amount = 0
         for num in range(3,number):
@@ -18,15 +19,32 @@ If the string contains an odd number of characters then it should replace the mi
 
 second character of the final pair with an underscore ('_').'''
 
-def solution1(s):
+def solution(s):
     s_list = []
 
-    for i in range(0,len(s_list),2): 
+    for i in range(0,len(s),2): 
         s_list.append(s[i:i+2])
-        print(s_list)
-    last_index = s_list[-1]
-    if len(last_index) == 1:
-        s_list[-1] = s_list[-1] + '-'
+
+    if len(s_list) != 0 and len(s_list[-1]) == 1:
+         s_list[-1] = s_list[-1] + '_'
     return s_list
 
-print(solution1('name'))
+
+'''In this simple Kata your task is to create a function that turns a string into a Mexican Wave.
+
+ You will be passed a string and you must return an array of strings where an uppercase letter is 
+
+ a person standing up.'''
+
+
+def wave(people):
+    people_list =[]
+    for i in range(len(people.rstrip())): 
+        if people[i] != ' ':
+            people_list.append(people[:i] + people[i].upper() + people[i+1:])
+
+    return people_list
+
+
+'''
+'''
